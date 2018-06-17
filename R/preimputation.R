@@ -5,7 +5,7 @@ preimputation<-function(data, imp.method='mean'){
     datapreimput<-complete(data)
   }
   if(imp.method=='locf'){
-    data<-t(db.prov)
+    data<-t(data)
     data<-na.locf(data)
     data<-t(data)
     data<-mice(data, method = 'mean', printFlag = F)
