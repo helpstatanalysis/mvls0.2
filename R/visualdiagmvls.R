@@ -32,7 +32,7 @@ visualdiagmvls<-function(mvls, method="multiple", cluster, norm=F){
     matrix.1<-data.1[,-dim(data.1)[2]]
     id<-seq(1,dim(matrix.1)[1], by=1)
     matrix.ggplot<-reshape(na.omit(matrix.1),idvar ="id", varying=list(1:(dim(matrix.1)[2])), direction = "long")
-    ggplot(data=matrix.ggplot, aes(x=time, y=a, group=id))+geom_line(alpha=.5)+ggtitle(paste0("Distribuzione del pattern",cluster))+labs (x="Time", y = "Values")+theme_classic()
+    ggplot(data=matrix.ggplot, aes(x=time, y=V1, group=id))+geom_line(alpha=.5)+ggtitle(paste0("Distribuzione del pattern",cluster))+labs (x="Time", y = "Values")+theme_classic()
   }
 }
 
